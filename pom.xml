@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>wisniewski.jakub</groupId>
-  <artifactId>MPR_Projekt_Restauracja</artifactId>
+  <artifactId>MPR_Restaurant</artifactId>
   <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -19,7 +19,7 @@
     </build>
     <packaging>jar</packaging>
 
-  <name>MPR_Projekt_Restauracja</name>
+  <name>MPR_Restaurant</name>
   <url>http://maven.apache.org</url>
 
   <properties>
