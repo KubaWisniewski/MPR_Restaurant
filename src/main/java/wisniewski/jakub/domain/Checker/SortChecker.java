@@ -10,8 +10,7 @@ import java.util.List;
  */
 public class SortChecker {
 
-    public boolean isSortValid(List<MenuPosition>lsMethod,List<MenuPosition>lsAll)
-    {
+    public boolean isSortValid(List<MenuPosition>lsMethod,List<MenuPosition>lsAll) {
         lsAll.sort(Comparator.comparing(MenuPosition::getPrice));
         return lsAll.equals(lsAll);
     }

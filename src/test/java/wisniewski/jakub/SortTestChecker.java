@@ -41,9 +41,6 @@ public class SortTestChecker {
         assertTrue(isSortValid);
         uow.saveChanges();
         connection.close();
-
-
-
     }
 
 }

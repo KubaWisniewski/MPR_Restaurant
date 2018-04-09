@@ -4,7 +4,6 @@ import wisniewski.jakub.dao.mappers.IMapper;
 import wisniewski.jakub.dao.repos.IMenuRepository;
 import wisniewski.jakub.dao.uow.IUnitOfWork;
 import wisniewski.jakub.domain.Menu;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,6 +19,7 @@ public class MenuRepository extends RepositoryBase<Menu> implements IMenuReposit
     PreparedStatement selectByType;
     String selectByIdRestaurantSql="SELECT * FROM menu WHERE idRestaurant=?";
     PreparedStatement selectByIdRestaurant;
+
     public MenuRepository(Connection connection, IMapper<Menu> mapper, IUnitOfWork uow) throws SQLException {
         super(connection, mapper, uow);
         selectByType=connection.prepareStatement(selectByTypeSql);

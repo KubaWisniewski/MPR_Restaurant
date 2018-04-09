@@ -7,5 +7,4 @@ public interface IDatabaseCatalog{
         public IRestaurantRepository restaurants();
         public IMenuRepository menus();
         public IMenuPositionRepository menuPositions();
-
 }

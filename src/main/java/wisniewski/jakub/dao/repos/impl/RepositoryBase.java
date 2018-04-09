@@ -6,7 +6,6 @@ import wisniewski.jakub.dao.uow.Entity;
 import wisniewski.jakub.dao.uow.IUnitOfWork;
 import wisniewski.jakub.dao.uow.IUnitOfWorkRepository;
 import wisniewski.jakub.domain.IHaveId;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ import java.util.List;
  */
 public abstract class RepositoryBase<TEntity extends IHaveId>
     implements IRepository<TEntity>, IUnitOfWorkRepository {
-
-
         protected Connection connection;
         protected IMapper<TEntity> mapper;
 
@@ -46,9 +43,6 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
             this.uow = uow;
         }
 
-
-
-
     private void checkIfTableExists(ResultSet rs) throws SQLException {
         while(rs.next()){
             if(rs.getString("TABLE_NAME").equalsIgnoreCase(getTableName()))
@@ -76,7 +70,6 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
         update = connection.prepareStatement(getUpdateQuerySql());
     }
 
-
     public int count(){
         try {
             ResultSet rs = count.executeQuery();
@@ -100,33 +93,26 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
         return 0;
     }
 
-
     public void delete(TEntity entity){
-
         Entity ent = new Entity(this);
         ent.setEntity(entity);
         uow.markAsDeleted(ent);
-
     }
 
     public void update(TEntity entity){
-
         Entity ent = new Entity(this);
         ent.setEntity(entity);
         uow.markAsChanged(ent);
     }
 
     public void add(TEntity entity){
-
         Entity ent = new Entity(this);
         ent.setEntity(entity);
         uow.markAsNew(ent);
     }
 
     public void createTable(){
-
         String sql = createTableStatementSql();
-
         try {
             Statement createTable = connection.createStatement();
             if(!tableExists)
@@ -136,7 +122,6 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
             e.printStackTrace();
         }
     }
-
 
     public List<TEntity> getPage(int offset, int limit){
         List<TEntity> result = new ArrayList<TEntity>();
@@ -154,7 +139,6 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
     }
 
     public TEntity get(int id){
-
         try {
             selectById.setInt(1, id);
             ResultSet rs = selectById.executeQuery();
@@ -168,8 +152,6 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
         return null;
     }
 
-
-
     public void persistAdd(Entity entity){
         try {
             setInsert((TEntity)entity.getEntity());
@@ -178,6 +160,7 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
             e.printStackTrace();
         }
     }
+
     public void persistUpdate(Entity entity){
         try {
             setUpdate((TEntity)entity.getEntity());
@@ -186,6 +169,7 @@ public abstract class RepositoryBase<TEntity extends IHaveId>
             e.printStackTrace();
         }
     }
+
     public void persistDelete(Entity entity){
         try {
             delete.setInt(1, ((TEntity)entity.getEntity()).getId());

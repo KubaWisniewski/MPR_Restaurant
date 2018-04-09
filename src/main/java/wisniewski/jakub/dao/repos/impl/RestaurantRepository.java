@@ -4,7 +4,6 @@ import wisniewski.jakub.dao.mappers.IMapper;
 import wisniewski.jakub.dao.repos.IRestaurantRepository;
 import wisniewski.jakub.dao.uow.IUnitOfWork;
 import wisniewski.jakub.domain.Restaurant;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 

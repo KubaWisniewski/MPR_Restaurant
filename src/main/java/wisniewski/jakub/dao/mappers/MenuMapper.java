@@ -1,7 +1,6 @@
 package wisniewski.jakub.dao.mappers;
 
 import wisniewski.jakub.domain.Menu;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

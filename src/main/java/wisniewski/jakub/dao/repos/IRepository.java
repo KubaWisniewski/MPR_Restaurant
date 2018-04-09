@@ -1,7 +1,6 @@
 package wisniewski.jakub.dao.repos;
 
 import wisniewski.jakub.domain.IHaveId;
-
 import java.util.List;
 
 /**

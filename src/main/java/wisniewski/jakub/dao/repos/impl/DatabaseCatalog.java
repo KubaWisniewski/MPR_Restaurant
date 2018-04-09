@@ -35,8 +35,7 @@ public class DatabaseCatalog implements IDatabaseCatalog {
         }
     }
 
-    public IMenuRepository menus()
-    {
+    public IMenuRepository menus() {
         try {
             return new MenuRepository(connection, new MenuMapper(), uow);
         } catch (SQLException e) {
@@ -46,7 +45,6 @@ public class DatabaseCatalog implements IDatabaseCatalog {
     }
 
     public IMenuPositionRepository menuPositions() {
-
         try {
             return new MenuPositionRepository(connection, new MenuPositionMapper(), uow);
         } catch (SQLException e) {

@@ -18,7 +18,6 @@ public class UnitOfWork implements IUnitOfWork {
 
     @Override
     public void saveChanges() {
-
         for(Entity entity: entities){
             entity.persist();
         }
@@ -29,33 +28,28 @@ public class UnitOfWork implements IUnitOfWork {
             e.printStackTrace();
             rollback();
         }
-
     }
 
     @Override
     public void rollback() {
         entities.clear();
-
     }
 
     @Override
     public void markAsNew(Entity entity) {
         entity.setState(EntityState.New);
         entities.add(entity);
-
     }
 
     @Override
     public void markAsChanged(Entity entity) {
         entity.setState(EntityState.Changed);
         entities.add(entity);
-
     }
 
     @Override
     public void markAsDeleted(Entity entity) {
         entity.setState(EntityState.Deleted);
         entities.add(entity);
-
     }
 }

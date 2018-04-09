@@ -9,5 +9,4 @@ public interface IUnitOfWork {
     public void markAsNew(Entity entity);
     public void markAsChanged(Entity entity);
     public void markAsDeleted(Entity entity);
-
 }

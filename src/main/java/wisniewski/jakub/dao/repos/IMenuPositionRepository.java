@@ -1,8 +1,6 @@
 package wisniewski.jakub.dao.repos;
 
-import wisniewski.jakub.domain.Menu;
 import wisniewski.jakub.domain.MenuPosition;
-
 import java.util.List;
 
 /**

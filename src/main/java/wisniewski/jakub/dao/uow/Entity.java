@@ -14,7 +14,6 @@ public class Entity {
     public Entity(IUnitOfWorkRepository repository){
         _repository=repository;
         this.state = EntityState.Unchanged;
-
     }
 
     public Object getEntity(){
@@ -49,7 +48,8 @@ public class Entity {
             case Unknown:
                 break;
             default:
-                break;}
+                break;
+        }
     }
 
 

@@ -3,9 +3,7 @@ package wisniewski.jakub.dao.repos.impl;
 import wisniewski.jakub.dao.mappers.IMapper;
 import wisniewski.jakub.dao.repos.IMenuPositionRepository;
 import wisniewski.jakub.dao.uow.IUnitOfWork;
-import wisniewski.jakub.domain.Menu;
 import wisniewski.jakub.domain.MenuPosition;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,6 +20,7 @@ public class MenuPositionRepository extends RepositoryBase<MenuPosition> impleme
     PreparedStatement selectByIdMenu;
     String selectAllsql="SELECT * FROM menuPosition";
     PreparedStatement selectAll;
+
     public MenuPositionRepository(Connection connection, IMapper<MenuPosition> mapper, IUnitOfWork uow) throws SQLException {
         super(connection, mapper, uow);
         selectByIdMenu=connection.prepareStatement(selectByIdMenuSql);
