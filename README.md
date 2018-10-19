@@ -1,4 +1,4 @@
-# Restaurant
+# Restaurant - Academic project
 
 Technologies: Java, JDBC, DB(HSQL)
 
